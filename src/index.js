@@ -5,12 +5,21 @@ import App from "./App";
 
 //Redux
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux"; //applyMiddleware pour l'asynchrone, combineReducers lorsqu'il y a plusieurs reducers
+import thunk from "redux-thunk"; //thunk pour l'asynchrone
 
-//Reducer
+//Reducers
 import { counterReducer } from "./redux/counter/counterReducer";
+import { quoteReducer } from "./redux/quote/quoteReducer";
 
-const store = createStore(counterReducer);
+const reducers = { counterReducer, quoteReducer };
+const reduc = combineReducers(reducers);
+const store = createStore(reduc, applyMiddleware(thunk));
+
+//Si Counter seul :
+//const store = createStore(counterReducer);
+
+//console.log("store.getState():", store.getState());
 
 ReactDOM.render(
     <Provider store={store}>

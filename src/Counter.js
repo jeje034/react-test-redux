@@ -9,7 +9,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { setIncrement, setDecrement } from "./redux/counter/counterAction";
 
 const Counter = () => {
-    const counter = useSelector((state) => state.counter);
+    //Sans combineReducers :
+    //const counter = useSelector((state) => state.counter);
+
+    //Avec combineReducers :
+    const counter = useSelector((state) => state.counterReducer.counter);
+    const quote = useSelector((state) => state.quoteReducer);
+    console.log(quote.isLoading);
 
     const dispatch = useDispatch();
     console.log(counter);
