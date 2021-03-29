@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
     quoteInHtml: "",
@@ -31,10 +32,12 @@ const quoteSlice = createSlice({
             state.quoteInText = "";
             state.author = "";
             state.isLoading = false;
-            state.error =
-                action.payload && action.payload.message
-                    ? action.payload.message
-                    : "An error occurs while fetching quote.";
+            state.error = action.payload
+                ? action.payload
+                : "An error occurs while fetching quote.";
+            // action.payload && action.payload.message
+            //     ? action.payload.message
+            //     : "An error occurs while fetching quote.";
         },
     },
 });
@@ -52,15 +55,23 @@ export const setQuoteIsDownloading = () => (dispatch) => {
     return dispatch(fetchQuoteRequest());
 };
 
-export const fetchQuote = () => (dispatch) => {
+export const fetchQuote = () => async (dispatch) => {
     const proxy = "https://cors-anywhere.herokuapp.com/";
     const quoteUrl = "https://zenquotes.io/api/random";
 
-    fetch(proxy + quoteUrl)
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            return dispatch(fetchQuoteSucces(data));
-        })
-        .catch((err) => dispatch(fetchQuoteFail(err)));
+    try {
+        const response = await axios.get(proxy + quoteUrl);
+        return dispatch(fetchQuoteSucces(response.data));
+    } catch (err) {
+        dispatch(fetchQuoteFail(err.message));
+    }
+
+    // Autre solution : sans axios
+    // fetch(proxy + quoteUrl)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //         console.log(data);
+    //         return dispatch(fetchQuoteSucces(data));
+    //     })
+    //     .catch((err) => dispatch(fetchQuoteFail(err.message)));
 };

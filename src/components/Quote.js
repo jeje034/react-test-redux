@@ -23,7 +23,7 @@ const Quote = () => {
                 <div>Recherche d'une citation en cours...</div>
             ) : (
                 <div>
-                    {error && error.length !== 0 && <div>Erreur</div>}
+                    {error && error.length !== 0 && <div>{error}</div>}
                     <div>{quoteInText}</div>
                     <div>{author}</div>
                     <Button
