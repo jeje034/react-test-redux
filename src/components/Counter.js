@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 
 //Redux
 import { useSelector, useDispatch } from "react-redux";
-import { setIncrement, setDecrement } from "./redux/counter/counterAction";
+import { setIncrement, setDecrement } from "../redux/counter/counterAction";
 
 const Counter = () => {
     //Sans combineReducers :

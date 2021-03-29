@@ -1,11 +1,11 @@
-//import './_Quote.scss';
+// import './_Quote.scss';
 
 import { Button } from "@material-ui/core";
 import { useEffect } from "react";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
-import { fetchQuote } from "./redux/quote/quoteAction";
+import { fetchQuote } from "../redux/quote/quoteAction";
 
 const Quote = () => {
     const { quoteInText, author, isLoading, error } = useSelector(
