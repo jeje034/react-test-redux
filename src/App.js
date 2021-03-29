@@ -9,7 +9,7 @@ function App() {
             <a href="https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random">
                 Pour débloquer l'accès aux citations
             </a>
-            {/* <Quote /> */}
+            {<Quote />}
         </div>
     );
 }

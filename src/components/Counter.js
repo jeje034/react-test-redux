@@ -11,17 +11,10 @@ import counterSlice from "../redux/counter/slice";
 const { setIncrement, setDecrement } = counterSlice.actions;
 
 const Counter = () => {
-    //Sans combineReducers :
-    //const counter = useSelector((state) => state.counter);
-
-    //Avec combineReducers :
-    //const counter = useSelector((state) => state.counterReducer.counter);
-    const counter = useSelector((state) => state.counter);
-    //const quote = useSelector((state) => state.quoteReducer);
-    //console.log(quote.isLoading);
+    const counter = useSelector((state) => state.counterReducer.counter);
 
     const dispatch = useDispatch();
-    console.log(counter);
+    console.log("counter:", counter);
 
     return (
         <>
