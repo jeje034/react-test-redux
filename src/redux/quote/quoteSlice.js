@@ -35,9 +35,6 @@ const quoteSlice = createSlice({
             state.error = action.payload
                 ? action.payload
                 : "An error occurs while fetching quote.";
-            // action.payload && action.payload.message
-            //     ? action.payload.message
-            //     : "An error occurs while fetching quote.";
         },
     },
 });
@@ -51,15 +48,15 @@ const {
     fetchQuoteFail,
 } = quoteSlice.actions;
 
-export const setQuoteIsDownloading = () => (dispatch) => {
-    return dispatch(fetchQuoteRequest());
-};
-
 export const fetchQuote = () => async (dispatch) => {
     const proxy = "https://cors-anywhere.herokuapp.com/";
     const quoteUrl = "https://zenquotes.io/api/random";
 
     try {
+        //D'abord on indique que la requête est en cours
+        dispatch(fetchQuoteRequest());
+
+        //Puis on appelle l'API
         const response = await axios.get(proxy + quoteUrl);
         return dispatch(fetchQuoteSucces(response.data));
     } catch (err) {
