@@ -1,15 +1,14 @@
-// import './_Quote.scss';
-
+import "./_Quote.scss";
 import { Button } from "@material-ui/core";
 import { useEffect } from "react";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
-import { fetchQuote } from "../redux/quote/quoteSlice";
+import { fetchQuote } from "./quoteSlice";
 
 const Quote = () => {
     const { quoteInText, author, isLoading, error } = useSelector(
-        (state) => state.quoteReducer
+        (state) => state.quoteStore
     );
 
     const dispatch = useDispatch();
@@ -20,9 +19,11 @@ const Quote = () => {
     return (
         <>
             {isLoading ? (
-                <div>Recherche d'une citation en cours...</div>
+                <div className="quote-main">
+                    Recherche d'une citation en cours...
+                </div>
             ) : (
-                <div>
+                <div className="quote-main">
                     {error && error.length !== 0 && <div>{error}</div>}
                     <div>{quoteInText}</div>
                     <div>{author}</div>

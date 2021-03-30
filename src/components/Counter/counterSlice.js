@@ -1,5 +1,5 @@
 import {
-    createSlice, //, PayloadAction pas utile pour ce composant Couter. Sera utile pour le composant Quote
+    createSlice, //, PayloadAction pas utile pour ce composant Couter. Est utile pour le composant Quote
 } from "@reduxjs/toolkit";
 
 const initialState = {

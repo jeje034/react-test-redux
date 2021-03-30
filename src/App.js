@@ -1,6 +1,6 @@
-import "./App.css";
-import Counter from "./components/Counter";
-import Quote from "./components/Quote";
+import "./_App.scss";
+import Counter from "./components/Counter/Counter";
+import Quote from "./components/Quote/Quote";
 
 function App() {
     return (

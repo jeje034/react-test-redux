@@ -1,19 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./_index.scss";
 import App from "./App";
 
 //Redux
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux"; //combineReducers lorsqu'il y a plusieurs reducers
-import counterSlice from "./redux/counter/slice";
-import quoteSlice from "./redux/quote/quoteSlice";
+import counterSlice from "./components/Counter/counterSlice";
+import quoteSlice from "./components/Quote/quoteSlice";
 
 const store = configureStore({
     reducer: combineReducers({
-        counterReducer: counterSlice.reducer,
-        quoteReducer: quoteSlice.reducer,
+        counterStore: counterSlice.reducer,
+        quoteStore: quoteSlice.reducer,
     }),
 });
 
