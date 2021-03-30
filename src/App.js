@@ -1,4 +1,4 @@
-import "./_App.scss";
+import "./App.scss";
 import Counter from "./components/Counter/Counter";
 import Quote from "./components/Quote/Quote";
 

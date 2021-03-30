@@ -16,6 +16,7 @@ const Quote = () => {
     useEffect(() => {
         dispatch(fetchQuote());
     }, [dispatch]);
+
     return (
         <>
             {isLoading ? (
