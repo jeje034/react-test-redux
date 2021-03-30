@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
-import { fetchQuote, setQuoteIsDownloading } from "../redux/quote/quoteSlice";
+import { fetchQuote } from "../redux/quote/quoteSlice";
 
 const Quote = () => {
     const { quoteInText, author, isLoading, error } = useSelector(
@@ -28,7 +28,6 @@ const Quote = () => {
                     <div>{author}</div>
                     <Button
                         onClick={() => {
-                            dispatch(setQuoteIsDownloading());
                             dispatch(fetchQuote());
                         }}
                     >
