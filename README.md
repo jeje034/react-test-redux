@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Test de Redux Toolkit inspiré du tuto Redux (sans Toolkit) sur Medium
+
+Ce projet est sur GitHub jeje034 (repository GitHub react-test-redux-toolkit).
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
