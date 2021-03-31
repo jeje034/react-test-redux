@@ -1,15 +1,16 @@
 import "./App.scss";
-import Counter from "./components/Counter/Counter";
-import Quote from "./components/Quote/Quote";
+import Page1 from "./Containers/Page1/Page1";
+import Page2 from "./Containers/Page2/Page2";
 
 function App() {
     return (
         <div>
-            <Counter />
-            <a href="https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random">
-                Pour débloquer l'accès aux citations
-            </a>
-            {<Quote />}
+            <Page1 />
+            <br />
+            <br />
+            <br />
+            <br />
+            <Page2 />
         </div>
     );
 }
