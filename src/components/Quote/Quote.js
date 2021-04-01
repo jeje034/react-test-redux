@@ -8,7 +8,7 @@ import { fetchQuote } from "./quoteSlice";
 
 const Quote = () => {
     const { quoteInText, author, isLoading, error } = useSelector(
-        (state) => state.quoteStore
+        (state) => state.quote
     );
 
     const dispatch = useDispatch();
