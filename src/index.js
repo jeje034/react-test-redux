@@ -7,13 +7,13 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux"; //combineReducers lorsqu'il y a plusieurs reducers
-import counterSlice from "./components/Counter/counterSlice";
-import quoteSlice from "./components/Quote/quoteSlice";
+import counterReducer from "./components/Counter/counterSlice";
+import quoteReducer from "./components/Quote/quoteSlice";
 
 const store = configureStore({
     reducer: combineReducers({
-        counterStore: counterSlice,
-        quoteStore: quoteSlice,
+        counterStore: counterReducer,
+        quoteStore: quoteReducer,
     }),
 });
 
