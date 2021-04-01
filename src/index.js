@@ -12,8 +12,8 @@ import quoteSlice from "./components/Quote/quoteSlice";
 
 const store = configureStore({
     reducer: combineReducers({
-        counterStore: counterSlice.reducer,
-        quoteStore: quoteSlice.reducer,
+        counterStore: counterSlice,
+        quoteStore: quoteSlice,
     }),
 });
 

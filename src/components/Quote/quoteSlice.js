@@ -39,7 +39,7 @@ const quoteSlice = createSlice({
     },
 });
 
-export default quoteSlice;
+export default quoteSlice.reducer;
 
 //Actions
 const {

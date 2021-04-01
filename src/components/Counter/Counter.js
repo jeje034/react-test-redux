@@ -6,9 +6,7 @@ import Button from "@material-ui/core/Button";
 
 //Redux
 import { useSelector, useDispatch } from "react-redux";
-import counterSlice from "./counterSlice";
-
-const { setIncrement, setDecrement } = counterSlice.actions;
+import { setIncrement, setDecrement } from "./counterSlice";
 
 const Counter = () => {
     const counter = useSelector((state) => state.counterStore.counter);
